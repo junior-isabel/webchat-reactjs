@@ -6,7 +6,7 @@ import {
 import LayoutDefault from '../../../components/layouts/default'
 import './find-friend.scss'
 export default (props) => {
-
+  document.title = "Encontrar amigos"
   return (
     <LayoutDefault>
       <div className="find-friend">

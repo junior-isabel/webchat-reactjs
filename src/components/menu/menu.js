@@ -13,7 +13,7 @@ export default () => {
       '/': 'Mensages',
       /* '/mycontacts': 'Contactos', */
       '/findfriend': 'Encontrar amigos',
-      '/register': 'Sair'
+      '/logout': 'Sair'
     }
     return (
         <nav className="app-navbar">

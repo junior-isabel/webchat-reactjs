@@ -16,5 +16,10 @@
           background: transparent;
         }
       }
+      button[type="submit"] {
+          margin-top: 20px;
+          cursor: pointer;
+          padding: 2px 8px;
+      }
     }
   }

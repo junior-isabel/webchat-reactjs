@@ -1,12 +1,20 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
+
 import './card-login.scss'
 import logo from '../../assets/logo.png'
 export default () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [saveLogin, setSaveLogin] = useState(false)
+    const history = useHistory()
     const handlerForm = (event) => {
         event.preventDefault()
+        localStorage.setItem('autheticate', JSON.stringify({
+            email: email
+        }))
+
+        setTimeout(()=> history.push('/'), 500)
     }
     return (
         <div className="card-form-login">

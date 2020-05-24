@@ -1,0 +1,25 @@
+.valide-account-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h1, p {
+    margin: 12px 0;
+  }
+  .group-digit-input-form {
+    margin-top: 12px;
+    .validate-account-form {
+      display: flex;
+      align-items: center;
+    }
+    input {
+      text-align: center;
+      font-size: 28px;
+      width: 48px;
+      text-transform: uppercase;
+      margin: 0 6px;
+      padding: 4px;
+    }
+  }
+}

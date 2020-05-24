@@ -14,6 +14,8 @@ import LayoutDefault from '../../../components/layouts/default'
 import AppHeader from '../../../components/widgets/headers/app-header'
 import ListMessage from '../../../components/listMessage/list-message'
 export default (props) => {
+  document.title ="chat - webChat"
+  const [myProfile] = useState(JSON.parse(localStorage.getItem('autheticate') || JSON.stringify({email: ''})))
   const [users, setUsers] = useState([
     {name: 'jose junior', time: '2h', 
     messages: [{name: 'jose junior', text: 'hello world', time: '15min'},
@@ -64,7 +66,7 @@ export default (props) => {
                 <Avatar>
                   <Person fontSize="large"/>
                 </Avatar>
-                <label> user name</label>
+                <label> {myProfile.email}</label>
               </div>
               <form className="form-search" action="">
                 <label>
