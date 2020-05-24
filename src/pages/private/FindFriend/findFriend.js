@@ -10,7 +10,7 @@ export default (props) => {
   return (
     <LayoutDefault>
       <div className="find-friend">
-        <header className="header-search-people">
+        {/*<header className="header-search-people">
           <form action="">
             <div className="form-input-search">
               <label htmlFor="search-people">
@@ -21,8 +21,8 @@ export default (props) => {
 
             </div>
           </form>
-        </header>
-        <section class="result-search-people">
+        </header> */}
+        <section className="result-search-people">
           <ul className="list-people">
             <li>
               <div className="list-people-avatar">
