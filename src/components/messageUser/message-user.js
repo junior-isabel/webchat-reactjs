@@ -20,7 +20,7 @@ export default ({ user, handlerOpenMessage }) => {
           <p>my message of day...</p>
         </div>
       </div>
-      <footer><Delete /></footer>
+      {/*<footer><Delete /></footer> */ }
     </section>
   )
 }
