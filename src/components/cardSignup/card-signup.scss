@@ -1,0 +1,20 @@
+.card-signup-form {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 40px;
+    li {
+      width: 100%;
+      line-height: 2em;
+      label {
+        display: flex;
+        input, select {
+          flex: .8;
+          padding: 6px 2px;
+          border-style: none;
+          outline-style: none;
+          border-bottom: 1px solid #aaa;
+          background: transparent;
+        }
+      }
+    }
+  }

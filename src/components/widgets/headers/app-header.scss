@@ -1,0 +1,19 @@
+.app-header {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0 30px 0px;
+  padding: 6px;
+  background: #a75f57;
+  box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.438);
+  transform: translateX(-50px);
+  &.hide {
+    display: none;
+  }
+  .user-active {
+    color: #8cdeff;
+    font-size: 24px;
+    text-transform: uppercase;
+  }
+}

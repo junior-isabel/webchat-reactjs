@@ -1,19 +1,12 @@
 
 .home-page {
-  .nav-height {
-    height: 10%;
-  }
+  color: #fafafa;
   .container {
-    width: 80%;
     height: 80vh;
-    margin: 10vh auto;
-    color: #fafafa;
   }
   .row {
     display: flex;
     height: 100%;
-    .column {
-    }
     .painel-message {
       background: #834943;
       position: relative;
@@ -96,40 +89,6 @@
       background: #a75f57;
       height: 100%;
       position: relative;
-      .content-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: 20px 0 30px 0px;
-        padding: 6px;
-        background: #a75f57;
-        box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.438);
-        transform: translateX(-50px);
-        .user-active {
-          color: #8cdeff;
-          font-size: 24px;
-          text-transform: uppercase;
-        }
-      }
-      .content-body {
-        color: #000;
-        padding: 6px;
-        max-height: 78%;
-        .list-message {
-          li {
-            transform: translateX(50px);
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.178);
-            background: #fafafa;
-            display: flex;
-            margin: 12px 0;
-            padding: 10px 8px;
-            .message {
-              flex: 1;
-              padding: 0 12px
-            }
-          }
-        }
-      }
       footer {
         height: 10%;
         position: absolute;

@@ -1,0 +1,46 @@
+.app-navbar {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    .icone-menu {
+      background-color: #fafafa;
+      border-radius: 100%;
+      width: 50px;
+      height: 50px;
+      display: inline-block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+    .navbar-links {
+      background: #834943;
+      width: 100vw;
+      height: 100vh;
+      position: absolute;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      top: 0;
+      z-index: -1;
+      .list-links {
+        /* width: 80%; */
+        flex: 1;
+        max-height: 80%;
+        margin: 0 auto;
+        margin-top: 80px;
+        font-size: 28px;
+        color: #fafafa;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        li {
+          line-height: 1.5em;
+        }
+      }
+        &.active {
+            display: flex;
+        }
+    }
+  }

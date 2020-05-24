@@ -1,11 +1,11 @@
 import React from 'react'
 import {Switch ,Route} from 'react-router-dom'
-import LoginPage from '../../pages/public/login/loginPage'
+import RegisterPage from '../../pages/public/register/register'
 export default () => {
 
     return (
         <Switch>
-        <Route path="/login" component={LoginPage} />
+        <Route path="/register" component={RegisterPage} />
         </Switch>
     )
 }

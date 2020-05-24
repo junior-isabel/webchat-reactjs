@@ -1,8 +1,9 @@
 import React from 'react'
 import './loginStyle.scss'
 import logo from '../../../assets/logo.png'
+import { Link } from 'react-router-dom'
 export default (props) => {
-  console.log(document.title)
+  document.title ="login - webchat"
   return (
     <section className="login-page">
       <header>
@@ -28,6 +29,7 @@ export default (props) => {
           </label>
           <button type="submit">login</button>
         </form>
+        <Link to="/register">cadastra-se</Link>
 
       </div>
     </section>

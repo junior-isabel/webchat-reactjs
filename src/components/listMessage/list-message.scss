@@ -1,0 +1,29 @@
+.card-list-message {
+    color: #000;
+    padding: 6px;
+    max-height: 72%;
+    width: 110%;
+    overflow: hidden;
+    overflow-y: auto;
+
+    .list-message {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 95%;
+      padding: 6px 8px;
+      transform: translateX(15px);
+      li {
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.178);
+        background: #fafafa;
+        display: flex;
+        margin: 12px 0;
+        padding: 10px 8px;
+        flex: 1;
+        .message {
+          flex: 1;
+          padding: 0 12px
+        }
+      }
+    }
+  }

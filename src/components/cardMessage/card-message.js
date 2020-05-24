@@ -1,6 +1,6 @@
 import React from 'react'
 import { Person } from '@material-ui/icons'
-import './message-context.scss'
+import './card-message.scss'
 export default ({message}) => {
 
 

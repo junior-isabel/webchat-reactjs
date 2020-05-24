@@ -3,11 +3,11 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: #4ba2ca;
+    background: #834943;
     header {
         width: 50%;
         height: 80vh;
-        background: linear-gradient(to right, #fafafa 80%, transparent 96%);
+        background: #fafafa;
         box-shadow: -20px 0 60px #0707078a;
         .description {
             width: 70%;
@@ -17,12 +17,12 @@
         }
     }
     .form {
-        background: #4ba2ca;
+        background: #a35a52;
         color: #fafafa;
         width: 30%;
         height: 65vh;
         margin-left: -15vw;
-        box-shadow: 20px 8px 80px -1px #0707078a, inset -10px -20px 40px -5px #033c5767;
+        box-shadow: 20px 8px 80px -1px #0707078a;
         border-radius: 4px;
         z-index: 1;
         display: flex;
@@ -49,7 +49,7 @@
           border-radius: 20px;
           cursor: pointer;
           &:hover {
-            background: #2699ce;
+            background: #47221f;
           }
         }
         label {
