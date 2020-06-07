@@ -1,5 +1,5 @@
 import React from 'react'
-import { Person, Delete } from '@material-ui/icons'
+import { Person } from '@material-ui/icons'
 import { Avatar } from '@material-ui/core'
 import './message-user.scss'
 export default ({ user, handlerOpenMessage }) => {

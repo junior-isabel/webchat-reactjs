@@ -10,8 +10,9 @@ export default () => {
     const history = useHistory()
     const handlerForm = (event) => {
         event.preventDefault()
-        localStorage.setItem('autheticate', JSON.stringify({
-            email: email
+        localStorage.clear()
+        localStorage.setItem('token', JSON.stringify({
+            token: email
         }))
 
         setTimeout(()=> history.push('/'), 500)
