@@ -4,28 +4,28 @@ import {
 } from '@material-ui/icons'
 
 import LayoutDefault from '../../../components/layouts/default'
-import { getPeople, addFriend } from '../../../api/services/findFriend'
-import './find-friend.scss'
+import { acceptFriend, getSolicities } from '../../../api/services/findFriend'
+import './accept-request.scss'
 export default (props) => {
   document.title = "Encontrar amigos"
   const [users, setUsers] = useState([])
   useEffect(() => {
-    async function loadData () {
-      try
-      {
-        let data = await getPeople()
-        setUsers(data)
-      }catch (error) {
+    async function loadData() {
+      try {
+        let data = await getSolicities()
+        setUsers(data.friends)
+      } catch (error) {
 
       }
     }
     loadData()
   }, [])
   function handlerSolicitarAmizade(id) {
-    addFriend(id).then(data => {
+    acceptFriend(id).then(data => {
       let _users = users.filter(user => user.id !== id)
       setUsers(_users)
     })
+    
   }
   return (
     <LayoutDefault>
@@ -40,11 +40,11 @@ export default (props) => {
                   </div>
                   <div className="list-people-user-info">
                     <h5>{`${user.firstName} ${user.lastName}`}</h5>
-                    <button onClick={() => handlerSolicitarAmizade(user.id)}>solicitar amizade</button>
+                    <button onClick={() => handlerSolicitarAmizade(user.id)}>aceita solicitação</button>
                   </div>
                 </li>
 
-              )) : <p>lista usuario vazia para si...</p>
+              )) : <p>não existe pedido para aceitar...</p>
             }
           </ul>
         </section>

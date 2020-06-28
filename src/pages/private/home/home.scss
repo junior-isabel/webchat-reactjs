@@ -2,7 +2,7 @@
 .home-page {
   color: #fafafa;
   .container {
-    height: 80vh;
+    height: 88vh;
   }
   .row {
     display: flex;
@@ -100,32 +100,6 @@
         width: 100%;
         padding: 12px;
         padding-bottom: 0;
-        .input-message {
-          display: flex;
-          align-items: center;
-          .input-text {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            border: 1px solid #000;
-            border-right-style: none;
-            border-radius: 20px;
-            margin: 0 8px;
-            padding-right: 5px;
-            input{
-              flex: 1;
-              font-size: 14px;
-              border-style: none;
-              outline-style: none;
-              background: transparent;
-              color: #fafafa;
-              padding: 8px;
-              &::placeholder {
-                color: #fafafa;
-              }
-            }
-          }
-        }
       }
     }
     .tabnav, .content {

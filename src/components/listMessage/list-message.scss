@@ -14,12 +14,9 @@
       padding: 6px 8px;
       transform: translateX(15px);
       li {
-        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.178);
-        background: #fafafa;
         display: flex;
-        margin: 12px 0;
-        padding: 10px 8px;
         flex: 1;
+        margin-right: 50px;
         .message {
           flex: 1;
           padding: 0 12px

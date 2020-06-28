@@ -1,8 +1,10 @@
 import React from 'react'
 import { Person } from '@material-ui/icons'
 import { Avatar } from '@material-ui/core'
+import { useSelector } from 'react-redux'
 import './message-user.scss'
 export default ({ user, handlerOpenMessage }) => {
+  const alerts = useSelector(state => state.alerts)
 
   return (
     <section className="message-user" onClick={handlerOpenMessage}>
@@ -13,14 +15,12 @@ export default ({ user, handlerOpenMessage }) => {
       </figure>
       <div className="message-user-content">
         <header>
-          <label className="name">{user.name}</label>
+          <label className="name">{user.firstName} {alerts[user.id] && alerts[user.id].counter > 0 ? `(${alerts[user.id].counter})` : ''}</label>
           <label>{user.time}</label>
         </header>
         <div className="text">
-          <p>my message of day...</p>
         </div>
       </div>
-      {/*<footer><Delete /></footer> */ }
     </section>
   )
 }

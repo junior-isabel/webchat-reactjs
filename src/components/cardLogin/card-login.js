@@ -3,38 +3,47 @@ import { useHistory } from 'react-router-dom'
 
 import './card-login.scss'
 import logo from '../../assets/logo.png'
-export default () => {
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const [saveLogin, setSaveLogin] = useState(false)
-    const history = useHistory()
-    const handlerForm = (event) => {
-        event.preventDefault()
-        localStorage.clear()
-        localStorage.setItem('token', JSON.stringify({
-            token: email
-        }))
+import { login } from '../../api/services/accounts'
+import getProfile from '../../api/services/profile'
+import { setUserToken } from '../../utils/token'
+import { useSelector } from 'react-redux'
+export default ({status}) => {
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const history = useHistory()
+  const socket = useSelector(state => state.socket)
+  const handlerForm = (event) => {
+    event.preventDefault()
 
-        setTimeout(()=> history.push('/'), 500)
-    }
-    return (
-        <div className="card-form-login">
-        <form method="POST" onSubmit={handlerForm}>
-          <figure>
-            <img src={logo} width="80" alt="logo" />
-          </figure>
-          <label htmlFor="">
-            <input type="text" name="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="email" required />
-          </label>
-          <label htmlFor="">
-            <input type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="password" id="" required/>
-          </label>
-          <label htmlFor="user-active" className="user-active">
-            <input type="checkbox" name="user-active" id="user-active" checked={saveLogin} onChange={() => setSaveLogin(!saveLogin)}/>
-            <span> Permanecer activo</span>
-          </label>
-          <button type="submit">login</button>
-        </form>
-      </div>
-    )
+    login(email, password).then(login => {
+
+      getProfile().then((data) => {
+        if (!data) return
+          if (socket) {
+            setUserToken(data)
+            socket.emit('set token', login.token)
+            setTimeout(() => history.push('/'), 200)
+          }
+
+      })
+    }).catch(err => {
+    })
+
+  }
+  return (
+    <div className={['card-form-login',status ? 'active-login' : ''].join(' ')}>
+      <form method="POST" onSubmit={handlerForm}>
+        <figure>
+          <img src={logo} width="80" alt="logo" />
+        </figure>
+        <label htmlFor="">
+          <input type="text" name="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="email" required />
+        </label>
+        <label htmlFor="">
+          <input type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="password" id="" required />
+        </label>
+        <button type="submit">login</button>
+      </form>
+    </div>
+  )
 }
