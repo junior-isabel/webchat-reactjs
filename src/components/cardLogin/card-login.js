@@ -16,7 +16,11 @@ export default ({status}) => {
     event.preventDefault()
 
     login(email, password).then(login => {
+      if(!login.token) {
 
+        alert(login.data.message)
+        return
+      }
       getProfile().then((data) => {
         if (!data) return
           if (socket) {

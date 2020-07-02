@@ -6,7 +6,7 @@ import {
 import LayoutDefault from '../../../components/layouts/default'
 import { acceptFriend, getSolicities } from '../../../api/services/findFriend'
 import './accept-request.scss'
-export default (props) => {
+export default () => {
   document.title = "Encontrar amigos"
   const [users, setUsers] = useState([])
   useEffect(() => {

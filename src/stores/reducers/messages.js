@@ -2,9 +2,7 @@ export const SET_MESSAGE = 'SET MESSAGE'
 export const ADD_MESSAGE = "ADD MESSAGE"
 export const ADD_MESSAGE_ALERT = "ADD MESSAGE ALERT"
 export const RESET_MESSAGE_ALERT ="RESET MESSAGE ALERT"
-const initialState = {
-
-}
+const initialState = { }
 
 export default function messages (state = initialState, action) {
   

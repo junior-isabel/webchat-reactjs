@@ -92,7 +92,7 @@ export default () => {
                 </label>
               </form>
               <ul className="message-friends">
-                {chat.map((user) => (
+                {chat && chat.map((user) => (
                   <li key={user.id} className={user.id === talk.userId ? 'active' : ''}>
                     <MessageUser user={user} handlerOpenMessage={() => selectMessage(user)} />
                   </li>

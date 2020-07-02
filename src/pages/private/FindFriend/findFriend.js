@@ -6,7 +6,7 @@ import {
 import LayoutDefault from '../../../components/layouts/default'
 import { getPeople, addFriend } from '../../../api/services/findFriend'
 import './find-friend.scss'
-export default (props) => {
+export default () => {
   document.title = "Encontrar amigos"
   const [users, setUsers] = useState([])
   useEffect(() => {
