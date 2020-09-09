@@ -3,11 +3,11 @@ import socketio from 'socket.io-client'
 export let socket
 
 export default function startSocketIO () {
-    socket = socketio('http://localhost:4000') // https://mubenq-chat.herokuapp.com
+    socket = socketio(process.env.REACT_APP_URL) // https://mubenq-chat.herokuapp.com
     return socket
 }
 export function startChat () {
-    socket = socketio('https://mubenq-chat.herokuapp.com/chat')
+    socket = socketio(process.env.PUBLIC_URL)
 }
 export function getSocket () {
 
