@@ -11,6 +11,23 @@
   &.hide {
     display: none;
   }
+  .btn-link {
+    background: transparent;
+    outline-style: none;
+    border-style: none;
+    color: #fff;
+    font-size: 1.4em;
+  }
+  .content-header-setting > .btn-link {
+    margin: 0 10px;
+    cursor: pointer;
+    &:last-child {
+      margin-right: 0;
+    }
+    &:active {
+      opacity: 0.7;
+    }
+  }
   .user-active {
     color: #8cdeff;
     font-size: 14px;

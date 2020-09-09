@@ -5,10 +5,14 @@ import './card-message.scss'
 export default ({ message, profile }) => {
 
   function loadingImage(e) {
-    e.target.classList.add('lazyload')
+    // e.target.classList.add('lazyload')
+    const lazys = Array.from(document.querySelectorAll('.message-context .message-context-text .lazyload'))
+    if (lazys.length) {
+      lazys[lazys.length - 1].src = lazys[lazys.length - 1].dataset.image
+
+    }
     document.querySelector('.card-list-message-scroll-down').onscroll = (evt) => {
       const lazy = document.querySelectorAll('.message-context .message-context-text .lazyload')
-
       const { top, height } = evt.target.getBoundingClientRect()
       Array.from(lazy).forEach(item => {
 
@@ -21,7 +25,7 @@ export default ({ message, profile }) => {
           item.src = item.dataset.image
           setTimeout(() => {
             item.classList.remove('lazyload')
-          }, 1000)
+          }, 800)
         }
       })
 
@@ -40,6 +44,7 @@ export default ({ message, profile }) => {
           <a href={message.urlImage} target="_blank" rel="noopener noreferrer">
             <img src='#'
               data-image={message.urlImage} width="100%" height="100%"
+              className="lazyload"
               style={{ maxWidth: '400px', maxHeight: '500px' }}
               alt={message.urlImage}
               onError={loadingImage}
