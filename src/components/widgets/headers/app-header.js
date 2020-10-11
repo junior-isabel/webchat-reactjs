@@ -6,7 +6,7 @@ export default ({user, handlerCallUser}) => {
       <header className={`app-header content-header nav-height ${user ? '': 'hide'}`}>
         <span className="user-active">{user.firstName} {user.lastName}</span>
         <div className="content-header-setting">
-          <button className="btn-link" onClick={handlerCallUser}>
+          <button className="btn-link" onClick={() => handlerCallUser(user)}>
             <VideoCall />
           </button>
           <button className="btn-link">

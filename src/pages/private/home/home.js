@@ -55,13 +55,18 @@ export default () => {
   let isCaller = false
   let [peer, setPeer] = useState(null)
   useEffect(() => {
+    /*
     if (!socket) return
-
     socket.on('call-video-from', data => {
       console.log('invite')
-      setUserCallMe(data)
-      setIsCallMe(true)
+      //setUserCallMe(data)
+      //setIsCallMe(true)
+      dispatch({
+        type: TypeActions.STATUS_CALL,
+        payload: {status: 'receive call', from: data},
+      })
     })
+
     if (!peer) return
     socket.on('call-video-in-action-close', () => {
       console.log('close connection')
@@ -71,7 +76,7 @@ export default () => {
       setIsCallMe(false)
       setCallVideo(false)
     })
-   
+*/   
   }, [socket, peer])
   
   useEffect(() => {
@@ -104,6 +109,7 @@ export default () => {
   }, [dispatch])
 
   const acceptCall = async () => {
+    /*
     try {
       setCallVideo(true)
       const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false})
@@ -139,8 +145,17 @@ export default () => {
 
       console.log(err)
     }
+    */
   }
-  const callUser = async () => {
+  const callUser = async (user) => {
+    dispatch({
+      type: TypeActions.STATUS_CALL,
+      payload: {
+        to: user,
+        from: profile.id
+      }
+    })
+    /*
     try {
       setCallVideo(true)
       const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false})
@@ -191,8 +206,10 @@ export default () => {
       })
 
     } catch (err) {}
+    */
   }
   const closeCall = () => {
+    /*
     if(!peer) return
     peer.destroy()
     const userTo = (userCallMe && userCallMe.userFrom) || talk.userId
@@ -205,20 +222,20 @@ export default () => {
         user: undefined
       }
     })
-
     socket.emit('call-video-in-action-close', {userTo})
+    */
   }
   return (
     <LayoutDefault>
       <div className="home-page">
-        {callVideo && <CallVideo
+        {/*callVideo && <CallVideo
         handlerCloseCall={closeCall}
         localVideoRef={localVideoRef}
         remoteVideoRef={remoteVideoRef}
         profile={profile}
-        />}
-        {isCallMe && <ReceiveCallVideo user={userCallMe.user} acceptCall={acceptCall}/>
-        }
+        />*/}
+        {/*isCallMe && <ReceiveCallVideo user={userCallMe.user} acceptCall={acceptCall}/>
+        */}
         <div className="container">
           <div className="row">
             <aside className="column tabnav painel-message">
