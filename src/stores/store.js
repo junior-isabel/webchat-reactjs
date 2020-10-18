@@ -6,15 +6,21 @@ import messages from './reducers/messages'
 import alerts from './reducers/notifications'
 import talk from './reducers/talk'
 import call from './reducers/call'
+import stream from './reducers/stream'
+import peer from './reducers/peer'
+import me from './reducers/me'
 const reducers = combineReducers({
     socket,
     chat,
     messages,
     alerts,
     talk,
-    call
+    call,
+    stream,
+    peer,
+    me
 })
 
 const store = createStore(reducers)
-
+window.store = store
 export default store

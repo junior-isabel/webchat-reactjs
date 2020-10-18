@@ -10,8 +10,7 @@ export default function chat(store = stateInitial, action) {
   switch (action.type) {
 
     case SET_FRIEND_CHAT:
-      return Object.assign({}, store, {
-        friends: action.payload
+      return Object.assign({}, store, { ...action.payload
       })
     case RESET_CHAT:
       return stateInitial

@@ -5,7 +5,7 @@ export default function talk (state = initialState, {type, payload}) {
 
   switch (type) {
     case SET_MESSAGE_ACTIVE_USER:
-      return {...state, userId: payload.userId}
+      return { ...state, ...payload }
       case RESET_MESSAGE_ACTIVE_USER:
         return initialState
     default:

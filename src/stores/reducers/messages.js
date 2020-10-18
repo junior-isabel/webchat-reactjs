@@ -10,7 +10,7 @@ export default function messages (state = initialState, action) {
   switch (action.type) {
     case SET_MESSAGE:
     return Object.assign({}, state, {
-      [payload.userId]: {
+      [payload.talkId]: {
         messages: payload.messages
       }
     })

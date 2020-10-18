@@ -5,6 +5,8 @@ import FindFriendPage from '../../pages/private/FindFriend/findFriend'
 import ValidateAccountPage from '../../pages/private/validateAccount/validate-account'
 import LogoutPage from '../../pages/private/logout/logout'
 import AcceptRequest from '../../pages/private/AcceptRequest/accept-request'
+
+
 const PrivateRoute = ({ children, ...rest }) => {
   const autheticate = localStorage.getItem('token') || null
   const token = autheticate ? JSON.parse(autheticate) : null

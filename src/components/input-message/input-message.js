@@ -1,31 +1,28 @@
 import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
 import {
   AttachFile,
   Send,
   CloseRounded
 } from '@material-ui/icons'
-import { useDispatch } from 'react-redux'
 import './input-message.scss'
 import { sendMessageId } from '../../api/services/messages'
-import { ADD_MESSAGE } from '../../stores/reducers/messages'
-export default ({ userId }) => {
+export default ({ userId, meId }) => {
 
   const [message, setMessage] = useState('')
   const [image, setImage] = useState('')
   const [previewimage, setPreviewImage] = useState('')
-  const dispatch = useDispatch()
+  const socket = useSelector(state => state.socket)
+
+
   function send() {
     if (!message && !image) return
     if (message.length > 5000) return
     sendMessageId(userId, message, image, !!image ? 'hipertext' : '').then(res => {
       setMessage('')
-      dispatch({
-        type: ADD_MESSAGE,
-        payload: {
-          userId,
-          message: res
-        }
-      })
+      /*
+      */
+      socket.emit('new-message', {userId, meId, message, image: res.urlImage, type: !!image ? 'hipertext': ''})
       setPreviewImage('')
       setImage('')
       setTimeout(() => {
