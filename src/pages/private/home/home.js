@@ -41,7 +41,7 @@ export default () => {
     dispatch({
       type: TypeActions.RESET_COUNTER_MESSAGE,
       payload: {
-        userId: talk.id
+        id: talk.id
       }
     })
   }

@@ -11,7 +11,7 @@ export default ({ userId, meId }) => {
 
   const [message, setMessage] = useState('')
   const [image, setImage] = useState('')
-  const [previewimage, setPreviewImage] = useState('')
+  const [previewImage, setPreviewImage] = useState('')
   const socket = useSelector(state => state.socket)
 
 
@@ -27,8 +27,8 @@ export default ({ userId, meId }) => {
       setImage('')
       setTimeout(() => {
         const element = document.querySelector('.card-list-message-scroll-down')
-        const height = element.scrollHeight
-        element.scrollTo(0, height + element.scrollTop)
+        const height = (element && element.scrollHeight) || 0
+        element && element.scrollTo(0, height + element.scrollTop)
       }, 100)
     })
   }
@@ -55,10 +55,10 @@ export default ({ userId, meId }) => {
       <span onClick={send} title="enviar">
         <Send />
       </span>
-      {previewimage && (
+      {previewImage && (
         <div className="previewImage">
           <CloseRounded onClick={deletePreviewImage} className="close-button"/>
-        <img src={previewimage} alt="preview-file" width="100%" height="100%"/>
+        <img src={previewImage} alt="preview-file" width="100%" height="100%"/>
       </div>
       )}
       

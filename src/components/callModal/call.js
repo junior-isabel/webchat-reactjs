@@ -4,14 +4,15 @@ import './call.scss'
 import TypeActions from '../../stores/constants'
 
 export default function CallModal () {
+  const statusCall = useSelector(state => state.call)
   const localVideo = useRef()
   const remoteVideo = useRef()
-  const statusCall = useSelector(state => state.call)
-  const user = getUser()
-  const stream = useSelector(state => state.stream)
-  const peer =  useSelector(state => state.peer)
-  const socket = useSelector(state => state.socket)
   const dispatch = useDispatch()
+  const peer =  useSelector(state => state.peer)
+  const stream = useSelector(state => state.stream)
+  const socket = useSelector(state => state.socket)
+  const user = getUser()
+  
   function getUser () {
     if (statusCall.status === 'call user') {
       return {
@@ -43,6 +44,7 @@ export default function CallModal () {
       stream.getTracks().forEach(track => stream.removeTrack(track))
     })
   }, [localVideo, stream, peer])
+
   useEffect(() => {
     if (statusCall.status === 'call user') {
       callUser()
@@ -53,7 +55,6 @@ export default function CallModal () {
 
   useEffect (() => {
     socket.on('call-video-in-action-close', id => {
-      console.log('app %o', id)
       dispatch({
         type: TypeActions.STATUS_REST
       })

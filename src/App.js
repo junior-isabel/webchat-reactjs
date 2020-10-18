@@ -64,7 +64,7 @@ function App() {
       dispatch({
         type: TypeActions.INCREMENT_NOTIFICATION_MESSAGE,
         payload: {
-          userId: data.talkId,
+          id: data.talkId,
           message: data
         }
       })

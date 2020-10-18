@@ -11,26 +11,26 @@ export default function alerts(state = initialState, action) {
 
     case ADD_NOTIFICATION_MESSAGE:
       return Object.assign({}, state, {
-        [payload.userId]: {
+        [payload.id]: {
           counter: 1
         }
       })
     case INCREMENT_NOTIFICATION_MESSAGE:
       if (state[payload.userId]) {
         return Object.assign({}, state, {
-          [payload.userId]: {
+          [payload.id]: {
             counter: state[payload.userId].counter + 1
           }
         })
       }
       return Object.assign({}, state, {
-        [payload.userId]: {
+        [payload.id]: {
           counter: 1
         }
       })
     case RESET_COUNTER_MESSAGE:
       return Object.assign({}, state, {
-        [payload.userId]: {
+        [payload.id]: {
           counter: 0
         }
       })
