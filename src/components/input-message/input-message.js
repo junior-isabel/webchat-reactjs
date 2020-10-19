@@ -20,8 +20,7 @@ export default ({ userId, meId }) => {
     if (message.length > 5000) return
     sendMessageId(userId, message, image, !!image ? 'hipertext' : '').then(res => {
       setMessage('')
-      /*
-      */
+
       socket.emit('new-message', {userId, meId, message, image: res.urlImage, type: !!image ? 'hipertext': ''})
       setPreviewImage('')
       setImage('')

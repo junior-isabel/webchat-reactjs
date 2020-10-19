@@ -20,18 +20,18 @@ export default () => {
         trickle: false,
         stream: stream
       })
+
       dispatch({
         type: TypeActions.SET_STREAM,
         payload: stream
       })
+
       dispatch({
         type: TypeActions.SET_PEER,
         payload: peer
       })
 
-    } catch(err) {
-
-    }
+    } catch(err) { }
 
     dispatch({
       type: TypeActions.STATUS_CALL,
@@ -40,6 +40,7 @@ export default () => {
       }
     })
   }
+
   return (
     <div className="receive-call-video">
       <div className="wrapper">

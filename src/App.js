@@ -72,7 +72,9 @@ function App() {
   }, [socket])
 
   useEffect(() => {
+    
     socket.current.off('save-message')
+
     socket.current.on('save-message', data => {
       dispatch({
         type: TypeActions.ADD_MESSAGE,
