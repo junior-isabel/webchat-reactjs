@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/junior-isabel/webchat-reactjs/static/css/main.5f3636b4.chunk.css",
+    "main.js": "/junior-isabel/webchat-reactjs/static/js/main.1f991b74.chunk.js",
+    "main.js.map": "/junior-isabel/webchat-reactjs/static/js/main.1f991b74.chunk.js.map",
+    "runtime-main.js": "/junior-isabel/webchat-reactjs/static/js/runtime-main.f3e3927f.js",
+    "runtime-main.js.map": "/junior-isabel/webchat-reactjs/static/js/runtime-main.f3e3927f.js.map",
+    "static/js/2.ba3ceb54.chunk.js": "/junior-isabel/webchat-reactjs/static/js/2.ba3ceb54.chunk.js",
+    "static/js/2.ba3ceb54.chunk.js.map": "/junior-isabel/webchat-reactjs/static/js/2.ba3ceb54.chunk.js.map",
+    "index.html": "/junior-isabel/webchat-reactjs/index.html",
+    "precache-manifest.f9f68da05903b37dfb6452d5f3fa8423.js": "/junior-isabel/webchat-reactjs/precache-manifest.f9f68da05903b37dfb6452d5f3fa8423.js",
+    "service-worker.js": "/junior-isabel/webchat-reactjs/service-worker.js",
+    "static/css/main.5f3636b4.chunk.css.map": "/junior-isabel/webchat-reactjs/static/css/main.5f3636b4.chunk.css.map",
+    "static/js/2.ba3ceb54.chunk.js.LICENSE.txt": "/junior-isabel/webchat-reactjs/static/js/2.ba3ceb54.chunk.js.LICENSE.txt",
+    "static/media/logo.png": "/junior-isabel/webchat-reactjs/static/media/logo.9235a458.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f3e3927f.js",
+    "static/js/2.ba3ceb54.chunk.js",
+    "static/css/main.5f3636b4.chunk.css",
+    "static/js/main.1f991b74.chunk.js"
+  ]
+}
