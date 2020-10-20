@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ca7184807bb534688541dddc9c6529c3",
+    "revision": "38d37b5c4ec0bcf1a4526fc763f58bba",
     "url": "/junior-isabel/webchat-reactjs/index.html"
   },
   {
