@@ -43,7 +43,7 @@ export default function CallModal () {
       })
       stream.getTracks().forEach(track => stream.removeTrack(track))
     })
-  }, [localVideo, stream, peer])
+  }, [localVideo, stream, peer, dispatch])
 
   useEffect(() => {
     if (statusCall.status === 'call user') {
@@ -51,7 +51,7 @@ export default function CallModal () {
     } else if (statusCall.status === 'call accept') {
       acceptCall()
     }
-  }, [])
+  }, [statusCall])
 
   useEffect (() => {
     socket.on('call-video-in-action-close', id => {
@@ -59,7 +59,7 @@ export default function CallModal () {
         type: TypeActions.STATUS_REST
       })
     })
-  }, [])
+  }, [socket, dispatch])
 
   function callUser () {
     peer.current.on('signal', signal => {

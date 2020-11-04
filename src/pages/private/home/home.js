@@ -68,7 +68,7 @@ export default () => {
         }
       })
     })
-  }, [talk, dispatch])
+  }, [talk, dispatch, messages])
 
 
   

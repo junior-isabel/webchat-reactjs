@@ -36,7 +36,7 @@ function App() {
         type: TypeActions.STATUS_REST
       })
     })
-  }, [])
+  }, [token, dispatch])
 
   useEffect(() => {
     socket.current.off('call-video-from')
@@ -48,7 +48,7 @@ function App() {
         })
       }
     })
-  }, [call])
+  }, [call, socket, dispatch])
 
   useEffect(() => {
     if (!socket.current) return
@@ -69,7 +69,7 @@ function App() {
         }
       })
     })
-  }, [socket])
+  }, [socket, dispatch])
 
   useEffect(() => {
     
@@ -84,7 +84,7 @@ function App() {
         }
       })
     })
-  }, [socket])
+  }, [socket, dispatch])
   
 
   let Modal
